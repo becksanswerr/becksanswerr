@@ -10,4 +10,4 @@ I'm running local LLMs, building smarter Agents, and operating entirely on offli
 
 Hopefully, I’ll get rich. If you’ve seen me somewhere and are considering hiring me, even a non-engineer can tell you’re definitely 500 IQ.
 
-Also, despite my C1 Indian-accented, erudite, eloquent, and remarkably proficient English, I learned Russian too. Because why not?
+Also, despite my erudite, eloquent, remarkably proficient and Indian-accented C1 English, I learned Russian too. Because why not?
