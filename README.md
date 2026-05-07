@@ -19,15 +19,10 @@ done the math yet.
 
 Exponential learner. Also a drummer. Rhythm applies to both.
 
-```python
-kaan = {
-    "focus":    ["LangGraph", "RAG", "Agentic Systems"],
-    "stack":    ["Python", "TypeScript", "Node.js"],
-    "infra":    ["Docker", "Linux", "LangSmith"],
-    "hardware": "RTX 4070 Super (yes, for LLMs)",
-    "motto":    "maximum performance · minimum waste",
-}
-```
+Building autonomous AI systems with local-first infrastructure,
+production-grade agent workflows, and zero tolerance for wasted compute.
+
+**Maximum performance. Minimum waste. Autonomous everything.**
 
 ---
 
@@ -46,40 +41,26 @@ kaan = {
 
 ---
 
-## 🔒 Enterprise Work
+## 🔒 Enterprise Architecture
 
-> _The real stuff is private, but here's what I've been building:_
+> _Due to NDA, the real stuff is private. Here is an architectural overview of my recent implementations:_
 
-| Project | Description | Stack |
-| --- | --- | --- |
-| **ElektraAI** | Enterprise-grade modular AI suite — decoupled Solvers, Summarizers, Context Verifiers | TypeScript · Vercel AI SDK · LangGraph |
-| **Valori Core** | Autonomous multi-agent system · ultra-low latency · local model deployment · offline-first | Python · LangGraph · Docker |
+| Project         | Description                                                                                                        | Tech Stack                                                          |
+| :-------------- | :----------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------ |
+| **ElektraAI**   | Enterprise-grade modular AI suite. decoupled Solvers, Summarizers, and Context Verifiers.                          | TypeScript · LangGraph · LangSmith · ExpressJS · Redis · PostgreSQL |
+| **Generic AI**  | Zero-code autonomous AI architecture. Dynamically generates and routes agent workflows for system-wide automation. | TypeScript · LangGraph · LangSmith · ExpressJS · Redis · PostgreSQL |
+| **Valori Core** | Autonomous multi-agent system focusing on ultra-low latency, local model deployment, and offline-first execution.  | Python · LangGraph · Docker · Redis · PostgreSQL                    |
 
----
+<details>
+<summary><strong>📐 Architecture Sample — Online Reservation Voice Agent</strong></summary>
 
-## 🚀 Featured Projects
+<br/>
 
-<table width="100%">
-  <tr>
-    <td width="50%">
-      <a href="https://github.com/becksanswerr/node-efficiency-index">
-        <img src="https://github-readme-stats.vercel.app/api/pin/?username=becksanswerr&repo=node-efficiency-index&theme=dark&hide_border=true&bg_color=0d1117&title_color=58a6ff&text_color=8b949e" width="100%" />
-      </a>
-    </td>
-    <td width="50%">
-      <a href="https://github.com/becksanswerr/CVScore-AI">
-        <img src="https://github-readme-stats.vercel.app/api/pin/?username=becksanswerr&repo=CVScore-AI&theme=dark&hide_border=true&bg_color=0d1117&title_color=58a6ff&text_color=8b949e" width="100%" />
-      </a>
-    </td>
-  </tr>
-  <tr>
-    <td colspan="2">
-      <a href="https://github.com/becksanswerr/Landy-AI-Agent-Assistant-For-Companies">
-        <img src="https://github-readme-stats.vercel.app/api/pin/?username=becksanswerr&repo=Landy-AI-Agent-Assistant-For-Companies&theme=dark&hide_border=true&bg_color=0d1117&title_color=58a6ff&text_color=8b949e" width="50%" />
-      </a>
-    </td>
-  </tr>
-</table>
+> A real-time voice + text reservation agent built with LangGraph. Features parallel STT/TTS pipelines, barge-in detection, and a stateful multi-node coordinator pattern.
+
+<img src="resources/online res arc.png" alt="Online Reservation Voice Agent Architecture" width="100%" />
+
+</details>
 
 ---
 
@@ -112,5 +93,5 @@ kaan = {
 ---
 
 <div align="center">
-<sub><code>// Istanbul, TR · Open to remote · Building things that matter</code></sub>
+<sub><code>// Antalya, TR · Open to remote · Building things that matter</code></sub>
 </div>
