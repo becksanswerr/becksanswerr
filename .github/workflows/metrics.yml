@@ -1,15 +1,15 @@
 name: GitHub Metrics
 
 on:
-  schedule: [{ cron: "0 0 * * *" }]
-  push: { branches: ["master", "main"] }
+  schedule: [{cron: "0 0 * * *"}]
+  push: {branches: ["master", "main"]}
   workflow_dispatch:
 
 jobs:
-  # ── 1. Quadrant: Core Stats & Lines ──────────────────────────────
+  # ── 1. Quadrant: Core Stats & Lines (Geçmiş tarama artırıldı) ──────
   stats-core:
     runs-on: ubuntu-latest
-    permissions: { contents: write }
+    permissions: {contents: write}
     steps:
       - uses: lowlighter/metrics@latest
         with:
@@ -17,12 +17,14 @@ jobs:
           filename: metrics-1.svg
           base: header, repositories, metadata
           plugin_lines: yes
+          # Son 1 yıldaki satır değişimlerini tara
+          plugin_lines_history_limit: 1
           config_timezone: Europe/Istanbul
 
   # ── 2. Quadrant: Isometric Calendar ─────────────────────────────
   stats-calendar:
     runs-on: ubuntu-latest
-    permissions: { contents: write }
+    permissions: {contents: write}
     steps:
       - uses: lowlighter/metrics@latest
         with:
@@ -36,7 +38,7 @@ jobs:
   # ── 3. Quadrant: Languages ──────────────────────────────────────
   stats-languages:
     runs-on: ubuntu-latest
-    permissions: { contents: write }
+    permissions: {contents: write}
     steps:
       - uses: lowlighter/metrics@latest
         with:
@@ -49,20 +51,26 @@ jobs:
           plugin_languages_limit: 6
           config_timezone: Europe/Istanbul
 
-  # ── 4. Quadrant: Topics & Achievements ──────────────────────────
-  stats-topics:
+  # ── 4. Quadrant: Notable & Achievements (Hata giderildi) ────────
+  stats-notable:
     runs-on: ubuntu-latest
-    permissions: { contents: write }
+    permissions: {contents: write}
     steps:
       - uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.METRICS_TOKEN }}
           filename: metrics-4.svg
           base: ""
-          plugin_topics: yes
-          plugin_topics_mode: icons
-          plugin_topics_limit: 15
+          # Notable Plugin: Katkı sağladığın repo logolarını gösterir
+          plugin_notable: yes
+          plugin_notable_from: all
+          plugin_notable_types: commit, pull_request, issue
+          # Achievements
           plugin_achievements: yes
-          plugin_achievements_threshold: B
+          plugin_achievements_threshold: C
           plugin_achievements_display: compact
+          # Topics (Daha stabil mod)
+          plugin_topics: yes
+          plugin_topics_limit: 12
+          plugin_topics_sort: stars
           config_timezone: Europe/Istanbul
