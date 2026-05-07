@@ -1,48 +1,77 @@
-name: Metrics
+name: GitHub Metrics
+
 on:
-  # Her 24 saatte bir güncelle
-  schedule: [{cron: "0 0 * * *"}]
-  # Manuel tetikleme (Test için)
+  # Her gün saat 00:00 UTC'de çalışır (03:00 İstanbul)
+  schedule:
+    - cron: "0 0 * * *"
+  # Push yapınca da günceller
+  push:
+    branches:
+      - main
+      - master
+  # Manuel de çalıştırabilirsin (Actions sekmesinden)
   workflow_dispatch:
-  # Push yapıldığında çalışsın
-  push: {branches: ["master", "main"]}
+
 jobs:
   github-metrics:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
     steps:
       - uses: lowlighter/metrics@latest
         with:
-          # GitHub Settings > Developer settings > Personal access tokens (classic) içinden token oluşturmalısın.
-          # Token yetkileri: public_repo, read:user
           token: ${{ secrets.METRICS_TOKEN }}
-
-          # Options
           user: becksanswerr
           template: classic
           base: header, activity, community, repositories, metadata
           config_timezone: Europe/Istanbul
-          
-          # Language Plugin
+          config_order: base.header, isocalendar, languages, habits, repositories
+
+          # ─── İsometrik commit takvimi ─────────────────────────────
+          plugin_isocalendar: yes
+          plugin_isocalendar_duration: full-year
+
+          # ─── Dil istatistikleri (indepth = repo klonlayıp analiz eder) ──
           plugin_languages: yes
-          plugin_languages_ignored: html, css
+          plugin_languages_ignored: >-
+            html, css, dockerfile, shell, makefile
+          plugin_languages_indepth: yes
           plugin_languages_details: bytes-size, percentage
-          
-          # Lines Plugin
-          plugin_lines: yes
-          
-          # Habits Plugin (Dashboard için en iyisi)
+          plugin_languages_sections: most-used
+          plugin_languages_colors: github
+          plugin_languages_limit: 6
+
+          # ─── Coding habits ────────────────────────────────────────
           plugin_habits: yes
           plugin_habits_from: 200
           plugin_habits_days: 14
+          plugin_habits_facts: yes
           plugin_habits_charts: yes
-          
-          # Achievements Plugin
-          plugin_achievements: yes
-          plugin_achievements_threshold: B
-          plugin_achievements_display: compact
-          
-          # Activity Plugin
+          plugin_habits_charts_type: classic
+          plugin_habits_trim: yes
+
+          # ─── Pinned / featured repos ──────────────────────────────
+          plugin_repositories: yes
+          plugin_repositories_featured: >-
+            becksanswerr/node-efficiency-index,
+            becksanswerr/CVScore-AI,
+            becksanswerr/Landy-AI-Agent-Assistant-For-Companies
+
+          # ─── Son aktiviteler ──────────────────────────────────────
           plugin_activity: yes
           plugin_activity_limit: 5
           plugin_activity_days: 14
-          plugin_activity_filter: all
+          plugin_activity_filter: >-
+            push, issue, pr, review, comment, fork
+
+          # ─── Achievements (isteğe bağlı, şık görünüyor) ───────────
+          plugin_achievements: yes
+          plugin_achievements_threshold: C
+          plugin_achievements_display: compact
+
+          # ─── Çıktı ayarları ───────────────────────────────────────
+          filename: github-metrics.svg
+          config_output: svg
+          committer_token: ${{ secrets.GITHUB_TOKEN }}
+          committer_message: "chore: update metrics [skip ci]"
