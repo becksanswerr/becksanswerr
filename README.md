@@ -8,7 +8,7 @@
 
 </div>
 
-<img align="right" src="https://metrics.lecoq.io/becksanswerr?template=classic&base=header%2C%20activity%2C%20community%2C%20repositories%2C%20metadata&base.indepth=false&base.hireable=false&base.skip=false&config.timezone=Europe%2FIstanbul" width="50%" />
+
 
 ### `$ whoami`
 
@@ -37,12 +37,20 @@ kaan = {
 
 ## 📊 Metrics
 
-<!-- Metrics generated via lowlighter/metrics GitHub Action -->
+<table width="100%">
+  <tr>
+    <td width="50%">
+      <img src="https://github-readme-stats.vercel.app/api?username=becksanswerr&show_icons=true&theme=dark&hide_border=true&bg_color=0d1117&title_color=58a6ff&icon_color=58a6ff&text_color=c9d1d9&count_private=true" width="100%" />
+    </td>
+    <td width="50%">
+      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=becksanswerr&layout=compact&theme=dark&hide_border=true&bg_color=0d1117&title_color=58a6ff&text_color=c9d1d9&hide=html,css" width="100%" />
+    </td>
+  </tr>
+</table>
 
+<!-- Advanced metrics (isometric calendar + language analysis) via lowlighter/metrics -->
 <div align="center">
-
-<img src="github-metrics.svg" alt="GitHub Metrics" />
-
+<img src="github-metrics.svg" alt="GitHub Metrics" width="100%" />
 </div>
 
 ---
@@ -60,14 +68,27 @@ kaan = {
 
 ## 🚀 Featured Projects
 
-<div align="center">
-
-[![node-efficiency-index](https://github-readme-stats.vercel.app/api/pin/?username=becksanswerr&repo=node-efficiency-index&theme=dark&hide_border=true&bg_color=0d1117&title_color=58a6ff&text_color=8b949e)](https://github.com/becksanswerr/node-efficiency-index)
-[![CVScore-AI](https://github-readme-stats.vercel.app/api/pin/?username=becksanswerr&repo=CVScore-AI&theme=dark&hide_border=true&bg_color=0d1117&title_color=58a6ff&text_color=8b949e)](https://github.com/becksanswerr/CVScore-AI)
-
-[![Landy-AI-Agent-Assistant-For-Companies](https://github-readme-stats.vercel.app/api/pin/?username=becksanswerr&repo=Landy-AI-Agent-Assistant-For-Companies&theme=dark&hide_border=true&bg_color=0d1117&title_color=58a6ff&text_color=8b949e)](https://github.com/becksanswerr/Landy-AI-Agent-Assistant-For-Companies)
-
-</div>
+<table width="100%">
+  <tr>
+    <td width="50%">
+      <a href="https://github.com/becksanswerr/node-efficiency-index">
+        <img src="https://github-readme-stats.vercel.app/api/pin/?username=becksanswerr&repo=node-efficiency-index&theme=dark&hide_border=true&bg_color=0d1117&title_color=58a6ff&text_color=8b949e" width="100%" />
+      </a>
+    </td>
+    <td width="50%">
+      <a href="https://github.com/becksanswerr/CVScore-AI">
+        <img src="https://github-readme-stats.vercel.app/api/pin/?username=becksanswerr&repo=CVScore-AI&theme=dark&hide_border=true&bg_color=0d1117&title_color=58a6ff&text_color=8b949e" width="100%" />
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      <a href="https://github.com/becksanswerr/Landy-AI-Agent-Assistant-For-Companies">
+        <img src="https://github-readme-stats.vercel.app/api/pin/?username=becksanswerr&repo=Landy-AI-Agent-Assistant-For-Companies&theme=dark&hide_border=true&bg_color=0d1117&title_color=58a6ff&text_color=8b949e" width="50%" />
+      </a>
+    </td>
+  </tr>
+</table>
 
 ---
 

@@ -1,15 +1,12 @@
 name: GitHub Metrics
 
 on:
-  # Her gün saat 00:00 UTC'de çalışır (03:00 İstanbul)
   schedule:
     - cron: "0 0 * * *"
-  # Push yapınca da günceller
   push:
     branches:
       - main
       - master
-  # Manuel de çalıştırabilirsin (Actions sekmesinden)
   workflow_dispatch:
 
 jobs:
@@ -24,15 +21,14 @@ jobs:
           token: ${{ secrets.METRICS_TOKEN }}
           user: becksanswerr
           template: classic
-          base: header, activity, community, repositories, metadata
+          base: header, repositories, metadata
           config_timezone: Europe/Istanbul
-          config_order: base.header, isocalendar, languages, habits, repositories
 
           # ─── İsometrik commit takvimi ─────────────────────────────
           plugin_isocalendar: yes
           plugin_isocalendar_duration: full-year
 
-          # ─── Dil istatistikleri (indepth = repo klonlayıp analiz eder) ──
+          # ─── Dil istatistikleri ───────────────────────────────────
           plugin_languages: yes
           plugin_languages_ignored: >-
             html, css, dockerfile, shell, makefile
@@ -41,34 +37,6 @@ jobs:
           plugin_languages_sections: most-used
           plugin_languages_colors: github
           plugin_languages_limit: 6
-
-          # ─── Coding habits ────────────────────────────────────────
-          plugin_habits: yes
-          plugin_habits_from: 200
-          plugin_habits_days: 14
-          plugin_habits_facts: yes
-          plugin_habits_charts: yes
-          plugin_habits_charts_type: classic
-          plugin_habits_trim: yes
-
-          # ─── Pinned / featured repos ──────────────────────────────
-          plugin_repositories: yes
-          plugin_repositories_featured: >-
-            becksanswerr/node-efficiency-index,
-            becksanswerr/CVScore-AI,
-            becksanswerr/Landy-AI-Agent-Assistant-For-Companies
-
-          # ─── Son aktiviteler ──────────────────────────────────────
-          plugin_activity: yes
-          plugin_activity_limit: 5
-          plugin_activity_days: 14
-          plugin_activity_filter: >-
-            push, issue, pr, review, comment, fork
-
-          # ─── Achievements (isteğe bağlı, şık görünüyor) ───────────
-          plugin_achievements: yes
-          plugin_achievements_threshold: C
-          plugin_achievements_display: compact
 
           # ─── Çıktı ayarları ───────────────────────────────────────
           filename: github-metrics.svg
