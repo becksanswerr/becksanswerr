@@ -8,8 +8,6 @@
 
 </div>
 
-
-
 ### `$ whoami`
 
 Backend developer & AI engineer. I don't just build API wrappers —  
@@ -31,27 +29,20 @@ kaan = {
 }
 ```
 
-<br clear="right"/>
-
 ---
 
 ## 📊 Metrics
 
 <table width="100%">
   <tr>
-    <td width="50%">
-      <img src="https://github-readme-stats.vercel.app/api?username=becksanswerr&show_icons=true&theme=dark&hide_border=true&bg_color=0d1117&title_color=58a6ff&icon_color=58a6ff&text_color=c9d1d9&count_private=true" width="100%" />
+    <td width="50%" valign="top">
+      <img src="github-metrics-left.svg" alt="Activity & Calendar" width="100%" />
     </td>
-    <td width="50%">
-      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=becksanswerr&layout=compact&theme=dark&hide_border=true&bg_color=0d1117&title_color=58a6ff&text_color=c9d1d9&hide=html,css" width="100%" />
+    <td width="50%" valign="top">
+      <img src="github-metrics-right.svg" alt="Languages & Habits" width="100%" />
     </td>
   </tr>
 </table>
-
-<!-- Advanced metrics (isometric calendar + language analysis) via lowlighter/metrics -->
-<div align="center">
-<img src="github-metrics.svg" alt="GitHub Metrics" width="100%" />
-</div>
 
 ---
 
@@ -59,10 +50,10 @@ kaan = {
 
 > _The real stuff is private, but here's what I've been building:_
 
-| Project         | Description                                                                                | Stack                                  |
-| --------------- | ------------------------------------------------------------------------------------------ | -------------------------------------- |
-| **ElektraAI**   | Enterprise-grade modular AI suite — decoupled Solvers, Summarizers, Context Verifiers      | TypeScript · Vercel AI SDK · LangGraph |
-| **Valori Core** | Autonomous multi-agent system · ultra-low latency · local model deployment · offline-first | Python · LangGraph · Docker            |
+| Project | Description | Stack |
+| --- | --- | --- |
+| **ElektraAI** | Enterprise-grade modular AI suite — decoupled Solvers, Summarizers, Context Verifiers | TypeScript · Vercel AI SDK · LangGraph |
+| **Valori Core** | Autonomous multi-agent system · ultra-low latency · local model deployment · offline-first | Python · LangGraph · Docker |
 
 ---
 
