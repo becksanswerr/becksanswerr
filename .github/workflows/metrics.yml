@@ -1,60 +1,68 @@
 name: GitHub Metrics
 
 on:
-  schedule:
-    - cron: "0 0 * * *"
-  push:
-    branches:
-      - main
-      - master
+  schedule: [{ cron: "0 0 * * *" }]
+  push: { branches: ["master", "main"] }
   workflow_dispatch:
 
 jobs:
-  metrics-left:
+  # ── 1. Quadrant: Core Stats & Lines ──────────────────────────────
+  stats-core:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
+    permissions: { contents: write }
     steps:
       - uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.METRICS_TOKEN }}
-          user: becksanswerr
-          template: classic
-          base: header, metadata
+          filename: metrics-1.svg
+          base: header, repositories, metadata
+          plugin_lines: yes
           config_timezone: Europe/Istanbul
+
+  # ── 2. Quadrant: Isometric Calendar ─────────────────────────────
+  stats-calendar:
+    runs-on: ubuntu-latest
+    permissions: { contents: write }
+    steps:
+      - uses: lowlighter/metrics@latest
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          filename: metrics-2.svg
+          base: ""
           plugin_isocalendar: yes
           plugin_isocalendar_duration: full-year
-          filename: github-metrics-left.svg
-          config_output: svg
-          committer_token: ${{ secrets.GITHUB_TOKEN }}
-          committer_message: "chore: update metrics [skip ci]"
+          config_timezone: Europe/Istanbul
 
-  metrics-right:
+  # ── 3. Quadrant: Languages ──────────────────────────────────────
+  stats-languages:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    needs: metrics-left
+    permissions: { contents: write }
     steps:
       - uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.METRICS_TOKEN }}
-          user: becksanswerr
-          template: classic
+          filename: metrics-3.svg
           base: ""
-          config_timezone: Europe/Istanbul
           plugin_languages: yes
           plugin_languages_ignored: html, css, dockerfile, shell, makefile
           plugin_languages_details: bytes-size, percentage
-          plugin_languages_sections: most-used
-          plugin_languages_colors: github
           plugin_languages_limit: 6
-          plugin_habits: yes
-          plugin_habits_from: 200
-          plugin_habits_days: 14
-          plugin_habits_facts: yes
-          plugin_habits_charts: no
+          config_timezone: Europe/Istanbul
 
-          filename: github-metrics-right.svg
-          config_output: svg
-          committer_token: ${{ secrets.GITHUB_TOKEN }}
-          committer_message: "chore: update metrics [skip ci]"
+  # ── 4. Quadrant: Topics & Achievements ──────────────────────────
+  stats-topics:
+    runs-on: ubuntu-latest
+    permissions: { contents: write }
+    steps:
+      - uses: lowlighter/metrics@latest
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          filename: metrics-4.svg
+          base: ""
+          plugin_topics: yes
+          plugin_topics_mode: icons
+          plugin_topics_limit: 15
+          plugin_achievements: yes
+          plugin_achievements_threshold: B
+          plugin_achievements_display: compact
+          config_timezone: Europe/Istanbul

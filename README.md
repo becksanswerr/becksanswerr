@@ -31,10 +31,18 @@ production-grade agent workflows, and zero tolerance for wasted compute.
 <table width="100%">
   <tr>
     <td width="50%" valign="top">
-      <img src="github-metrics-left.svg" alt="Activity & Calendar" width="100%" />
+      <img src="metrics-1.svg" alt="Core Stats" width="100%" />
     </td>
     <td width="50%" valign="top">
-      <img src="github-metrics-right.svg" alt="Languages & Habits" width="100%" />
+      <img src="metrics-2.svg" alt="Isometric Calendar" width="100%" />
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <img src="metrics-3.svg" alt="Languages" width="100%" />
+    </td>
+    <td width="50%" valign="top">
+      <img src="metrics-4.svg" alt="Topics & Achievements" width="100%" />
     </td>
   </tr>
 </table>
