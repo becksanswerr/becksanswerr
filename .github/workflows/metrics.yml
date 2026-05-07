@@ -1,0 +1,48 @@
+name: Metrics
+on:
+  # Her 24 saatte bir güncelle
+  schedule: [{cron: "0 0 * * *"}]
+  # Manuel tetikleme (Test için)
+  workflow_dispatch:
+  # Push yapıldığında çalışsın
+  push: {branches: ["master", "main"]}
+jobs:
+  github-metrics:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: lowlighter/metrics@latest
+        with:
+          # GitHub Settings > Developer settings > Personal access tokens (classic) içinden token oluşturmalısın.
+          # Token yetkileri: public_repo, read:user
+          token: ${{ secrets.METRICS_TOKEN }}
+
+          # Options
+          user: becksanswerr
+          template: classic
+          base: header, activity, community, repositories, metadata
+          config_timezone: Europe/Istanbul
+          
+          # Language Plugin
+          plugin_languages: yes
+          plugin_languages_ignored: html, css
+          plugin_languages_details: bytes-size, percentage
+          
+          # Lines Plugin
+          plugin_lines: yes
+          
+          # Habits Plugin (Dashboard için en iyisi)
+          plugin_habits: yes
+          plugin_habits_from: 200
+          plugin_habits_days: 14
+          plugin_habits_charts: yes
+          
+          # Achievements Plugin
+          plugin_achievements: yes
+          plugin_achievements_threshold: B
+          plugin_achievements_display: compact
+          
+          # Activity Plugin
+          plugin_activity: yes
+          plugin_activity_limit: 5
+          plugin_activity_days: 14
+          plugin_activity_filter: all
