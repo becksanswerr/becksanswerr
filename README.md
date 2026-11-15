@@ -10,7 +10,7 @@
 
 ### `$ whoami`
 
-Backend developer & AI engineer. I don't just build API wrappers —  
+Backend developer & AI engineer. 
 I architect autonomous intelligence that's actually production-ready.
 
 Multi-agent workflows. Advanced RAG pipelines. Local LLMs running  
